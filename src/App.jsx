@@ -1,30 +1,22 @@
-import React from 'react'
-import MapDemo1 from './components/MapDemo1'
-import Header from './components/Header'
-import UseStateDemo1 from './useState/useStateDemo1'
-import UseStateDemo2 from './useState/useStateDemo2'
-import UseStateDemo3 from './useState/useStateDemo3'
-import InputDemo1 from './InputDemo/InputDemo1'
-import InputDemo2 from './InputDemo/InputDemo2'
-import Footer from './components/Footer'
-import { InputDemo3 } from './InputDemo/InputDemo3'
+import { Route, Routes } from "react-router-dom";
+import NetflixHome from "./netflix/NetflixHome";
+import NetflixMovies from "./netflix/NetflixMovies";
+import NetflixShows from "./netflix/NetflixShows";
+import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <InputDemo3/>
-      <Footer/>
-
-      {/* <MapDemo1/> */}
-      {/* <useStateDemo1></useStateDemo1> */}
-      {/* <UseStateDemo1/>
-      <UseStateDemo2/>
-      <UseStateDemo3/> */}
-      {/* <InputDemo1/> */}
-      {/* <InputDemo2/> */}
+      <Navbar />
+      <Routes>
+        <Route path="/netflixHome" element={<NetflixHome />}></Route>
+        <Route path="/netflixMovies" element={<NetflixMovies />}></Route>
+        <Route path="/netflixShows" element={<NetflixShows />}></Route>
+        <Route path="/*" element={<NotFound />}></Route>
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
