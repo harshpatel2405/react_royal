@@ -3,31 +3,105 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <Link class="navbar-brand" to="/">Netflix</Link>
- 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <Link class="nav-link" to="/netflixHome">Home <span class="sr-only">(current)</span></Link>
-      </li>
-      <li class="nav-item">
-        <Link class="nav-link" to="/netflixMovies">Movies</Link>
-      </li>
-      <li class="nav-item">
-        <Link class="nav-link" to="/netflixShows">Shows</Link>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
-    </div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <Link className="navbar-brand" to="/">
+        Navbar
+      </Link>
+
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul className="navbar-nav">
+          {/* ✅ Netflix Dropdown */}
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown1"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Netflix
+            </a>
+            <ul
+              className="dropdown-menu dropdown-menu-dark" 
+              aria-labelledby="navbarDropdown1"
+            >
+              <li>
+                <Link className="dropdown-item" to="/netflixHome">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/netflixShows">
+                  Shows
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/netflixMovies">
+                  Movies
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* ✅ Tasks Dropdown */}
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown2"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Tasks
+            </a>
+            <ul
+              className="dropdown-menu dropdown-menu-dark"  
+              aria-labelledby="navbarDropdown2"
+            >
+              <li>
+                <Link className="dropdown-item" to="/employees">
+                  Task 1 - Employee (Props)
+                </Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/student">
+                  Task 2 - Student (Props)
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
 
+
+// <li class="nav-item active">
+//         <Link class="nav-link" to="/netflixHome">Home <span class="sr-only">(current)</span></Link>
+//       </li>
+//       <li class="nav-item">
+//         <Link class="nav-link" to="/netflixMovies">Movies</Link>
+//       </li>
+//       <li class="nav-item">
+//         <Link class="nav-link" to="/netflixShows">Shows</Link>
+//       </li>
 
 /*
 ! Formatted Version :: use only when css is needed......
